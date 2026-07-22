@@ -314,23 +314,16 @@ ul { list-style: none; }
    HERO HELIX
 ===================================== */
 
-.hero{
-    position:relative;
-    overflow:hidden;
-}
-
 .hero-helix{
     position:absolute;
     top:50%;
-    right:10px;
+    right:140px;          /* Ends below Contact nav */
     transform:translateY(-50%);
-    width:20px;
+    width:150px;          /* narrower overall */
     height:720px;
-    opacity:.22;
+    opacity:.25;
     pointer-events:none;
     z-index:1;
-
-    animation:helixDrift 14s ease-in-out infinite;
 }
 
 .hero-helix svg{
@@ -338,23 +331,6 @@ ul { list-style: none; }
     height:100%;
     overflow:visible;
 }
-
-/* Main helix lines */
-
-.helix-path path:nth-child(1){
-    transform: translateX(0);
-}
-
-.helix-path path:nth-child(2){
-    transform: translateX(20px);
-}
-
-.helix-path path:nth-child(3){
-    transform: translateX(40px);
-}
-}
-
-/* Soft glow */
 
 .hero-helix::after{
     content:"";
@@ -367,32 +343,13 @@ ul { list-style: none; }
     z-index:-1;
 }
 
-/* Entire helix slowly floats */
-
 @keyframes helixDrift{
-
     0%,100%{
-        transform:translateY(-50%) translateX(0);
+        transform:translateY(-50%);
     }
-
     50%{
-        transform:translateY(-52%) translateX(-10px);
+        transform:translateY(-51%);
     }
-
-}
-
-/* Simulates thread movement */
-
-@keyframes helixFlow{
-
-    from{
-        stroke-dashoffset:0;
-    }
-
-    to{
-        stroke-dashoffset:-220;
-    }
-
 }
 
 /* =========================================================
