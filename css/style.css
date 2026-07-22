@@ -317,9 +317,9 @@ ul { list-style: none; }
 .hero-helix{
     position:absolute;
     top:50%;
-    right:140px;          /* Ends below Contact nav */
+    right:-130px;          /* Ends below Contact nav */
     transform:translateY(-50%);
-    width:150px;          /* narrower overall */
+    width:420px;          /* narrower overall */
     height:720px;
     opacity:.25;
     pointer-events:none;
