@@ -252,7 +252,20 @@ ul { list-style: none; }
     radial-gradient(circle at 75% 30%, rgba(255,196,0,0.18), transparent 55%),
     linear-gradient(180deg, rgba(30,30,30,0.6), rgba(30,30,30,0.9));
 }
-.hero-content { position: relative; z-index: 2; max-width: 760px; }
+.hero-content{
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0 16px;
+}
 .hero-eyebrow {
   font-family: var(--font-head);
   font-size: 0.85rem;
@@ -309,21 +322,28 @@ ul { list-style: none; }
 
 .hero-helix{
     position:absolute;
-    top:0;
-    right:120px;
-    width:420px;
-    height:150%;
+
+    top:50%;
+    right:-60px;
+
+    transform:translateY(-50%);
+
+    width:430px;
+    height:100%;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     pointer-events:none;
+
+    opacity:.35;
     z-index:1;
-    opacity:.45;
 }
 
 .hero-helix svg{
     width:100%;
-    height:110%;
+    height:100%;
 }
 
 .hero-content{
