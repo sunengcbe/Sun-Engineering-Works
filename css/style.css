@@ -341,29 +341,17 @@ ul { list-style: none; }
 
 /* Main helix lines */
 
-.helix-path path{
-    fill:none;
-    stroke:#FFC400;
-    stroke-width:3;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-
-    stroke-dasharray:12 10;
-    animation:helixFlow 8s linear infinite;
+.helix-path path:nth-child(1){
+    transform: translateX(0);
 }
-
-/* Middle strand */
 
 .helix-path path:nth-child(2){
-    opacity:.65;
-    animation-delay:-2s;
+    transform: translateX(45px);
 }
 
-/* Rear strand */
-
 .helix-path path:nth-child(3){
-    opacity:.35;
-    animation-delay:-4s;
+    transform: translateX(90px);
+}
 }
 
 /* Soft glow */
