@@ -1,0 +1,101 @@
+/* =========================================================
+   SUN ENGINEERING WORKS — RESPONSIVE STYLESHEET
+   ---------------------------------------------------------
+   Breakpoints
+   - Large desktop : default (1200px container)
+   - Laptop        : max 1024px
+   - Tablet        : max 768px
+   - Mobile        : max 560px
+   ========================================================= */
+
+/* ===== LAPTOP (max 1024px) ===== */
+@media (max-width: 1024px) {
+  .services-grid,
+  .products-grid,
+  .forms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section { padding: var(--space-6) 0; }
+}
+
+/* ===== TABLET (max 768px) ===== */
+@media (max-width: 768px) {
+  /* Mobile navigation */
+  .menu-toggle { display: flex; }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 280px;
+    max-width: 80vw;
+    background: var(--white);
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--space-2);
+    padding: 90px var(--space-3) var(--space-3);
+    box-shadow: var(--shadow-lg);
+    transform: translateX(100%);
+    transition: transform var(--t);
+    z-index: 90;
+  }
+  .nav-links.open { transform: translateX(0); }
+  .nav-link { font-size: 1.1rem; }
+
+  /* Stacked grids */
+  .rolled-grid,
+  .capabilities-content,
+  .about-grid,
+  .contact-grid,
+  .detail-item,
+  .detail-item.reverse {
+    grid-template-columns: 1fr;
+  }
+  .detail-item.reverse .detail-media,
+  .detail-item.reverse .detail-body { order: unset; }
+  .detail-desc { max-width: 100%; }
+
+  .gallery-grid { grid-template-columns: 1fr; }
+
+  .hero { min-height: 90vh; }
+
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+
+/* ===== MOBILE (max 560px) ===== */
+@media (max-width: 560px) {
+  .services-grid,
+  .products-grid,
+  .forms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .btn { width: 100%; }
+
+  .section-title { font-size: 1.6rem; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1rem; }
+
+  .container { padding: 0 var(--space-1); }
+  .section { padding: var(--space-5) 0; }
+  .product-body,
+  .form-card { padding: var(--space-2); }
+  .detail-item { padding: var(--space-3) 0; }
+
+  .contact-form { padding: var(--space-2); }
+}
+
+/* ===== REDUCED MOTION ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
