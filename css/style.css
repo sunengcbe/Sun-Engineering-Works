@@ -178,17 +178,10 @@ ul { list-style: none; }
 
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px; height: 42px;
-  border-radius: 10px;
-  background: var(--yellow-grad);
-  color: var(--charcoal);
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
+  width: 48px;       /* Adjust as needed */
+  height: 48px;
+  object-fit: contain;
+  display: block;
 }
 .logo-text {
   font-family: var(--font-head);
