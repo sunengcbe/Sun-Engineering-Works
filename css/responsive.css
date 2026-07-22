@@ -23,6 +23,12 @@
   /* Mobile navigation */
   .menu-toggle { display: flex; }
 
+   .hero-helix{
+    width:260px;
+    right:-80px;
+    opacity:0.2;
+   }
+
   .nav-links {
     position: fixed;
     top: 0;
@@ -70,6 +76,9 @@
   .forms-grid {
     grid-template-columns: 1fr;
   }
+   .hero-helix{
+    display:none;
+   }
 
   .hero-actions { flex-direction: column; align-items: stretch; }
   .btn { width: 100%; }
