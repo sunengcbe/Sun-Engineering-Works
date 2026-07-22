@@ -336,8 +336,8 @@ ul { list-style: none; }
 }
 
 .helix-path path{
-    stroke: #FFC400;      /* Helix color */
-    stroke-width: 4;      /* Thickness */
+    stroke: #FFFFFF;      /* Helix color */
+    stroke-width: 5;      /* Thickness */
     stroke-linecap: round;
     animation: helixFloat 8s ease-in-out infinite;
 }
