@@ -322,9 +322,9 @@ ul { list-style: none; }
 .hero-helix{
     position:absolute;
     top:50%;
-    right:3%;
+    right:140px;
     transform:translateY(-50%);
-    width:360px;
+    width:180px;
     height:720px;
     opacity:.22;
     pointer-events:none;
