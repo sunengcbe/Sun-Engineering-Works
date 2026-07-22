@@ -317,11 +317,11 @@ ul { list-style: none; }
 .hero-helix{
     position:absolute;
     top:50%;
-    right:-130px;          /* Ends below Contact nav */
+    right:-3000px;          /* Ends below Contact nav */
     transform: translateY(-50%) scale(100);
     transform-origin: center right;
-    width:420px;          /* narrower overall */
-    height:720px;
+    width:1000px;          /* narrower overall */
+    height:1000px;
     opacity:.25;
     pointer-events:none;
     z-index:1;
