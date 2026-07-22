@@ -324,7 +324,7 @@ ul { list-style: none; }
     top:50%;
     right:140px;
     transform:translateY(-50%);
-    width:180px;
+    width:20px;
     height:720px;
     opacity:.22;
     pointer-events:none;
