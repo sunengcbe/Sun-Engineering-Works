@@ -244,7 +244,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   background: var(--charcoal);
-  overflow: hidden;
+  overflow:hidden;
 }
 .hero-overlay {
   position: absolute; inset: 0;
@@ -317,7 +317,7 @@ ul { list-style: none; }
 
 .hero {
     position: relative;
-    overflow: hidden;
+    overflow:visible;
 }
 
 .hero-helix{
