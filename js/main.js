@@ -1,0 +1,120 @@
+/* =========================================================
+   SUN ENGINEERING WORKS — MAIN JAVASCRIPT
+   ---------------------------------------------------------
+   Contents
+   1. Page Loader
+   2. Sticky Header on Scroll
+   3. Mobile Menu Toggle
+   4. Active Nav Link on Scroll (Scroll Spy)
+   5. Reveal-on-Scroll Animations (IntersectionObserver)
+   6. Contact Form Submission (demo)
+   ========================================================= */
+
+(function () {
+  "use strict";
+
+  /* ===== 1. PAGE LOADER ===== */
+  window.addEventListener("load", function () {
+    var loader = document.getElementById("loader");
+    if (loader) {
+      setTimeout(function () { loader.classList.add("hidden"); }, 600);
+    }
+  });
+
+  /* ===== 2. STICKY HEADER ON SCROLL ===== */
+  var header = document.getElementById("header");
+  function onScrollHeader() {
+    if (!header) return;
+    if (window.scrollY > 40) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  }
+  window.addEventListener("scroll", onScrollHeader, { passive: true });
+  onScrollHeader();
+
+  /* ===== 3. MOBILE MENU TOGGLE ===== */
+  var menuToggle = document.getElementById("menuToggle");
+  var navLinks = document.getElementById("navLinks");
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+      var isOpen = navLinks.classList.toggle("open");
+      menuToggle.classList.toggle("open", isOpen);
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    /* Close menu when a link is clicked */
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  /* ===== 4. ACTIVE NAV LINK ON SCROLL (SCROLL SPY — HOME PAGE ONLY) ===== */
+  /* Interior pages set the active class directly in their HTML.
+     Scroll spy is only needed on the home page where all sections coexist. */
+  var sections = document.querySelectorAll("section[id]");
+  var navLinkEls = document.querySelectorAll(".nav-link");
+
+  if (sections.length > 2) {
+    function setActiveLink() {
+      var current = "";
+      var scrollPos = window.scrollY + 120;
+      sections.forEach(function (sec) {
+        if (scrollPos >= sec.offsetTop) {
+          current = sec.getAttribute("id");
+        }
+      });
+      navLinkEls.forEach(function (link) {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    }
+    window.addEventListener("scroll", setActiveLink, { passive: true });
+    setActiveLink();
+  }
+
+  /* ===== 5. REVEAL-ON-SCROLL ANIMATIONS ===== */
+  var revealEls = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+    );
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    /* Fallback: show everything */
+    revealEls.forEach(function (el) { el.classList.add("visible"); });
+  }
+
+  /* ===== 6. CONTACT FORM SUBMISSION (DEMO) ===== */
+  var contactForm = document.getElementById("contactForm");
+  var formSuccess = document.getElementById("formSuccess");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      /* Demo only — shows success message */
+      contactForm.reset();
+      if (formSuccess) {
+        formSuccess.hidden = false;
+        formSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  }
+})();
