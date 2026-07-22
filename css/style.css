@@ -336,9 +336,10 @@ ul { list-style: none; }
 }
 
 .helix-path path{
-    stroke:#2B4C7E;
-    stroke-linecap:round;
-    animation:helixFloat 8s ease-in-out infinite;
+    stroke: #FFC400;      /* Helix color */
+    stroke-width: 4;      /* Thickness */
+    stroke-linecap: round;
+    animation: helixFloat 8s ease-in-out infinite;
 }
 
 .helix-path path:nth-child(2){
