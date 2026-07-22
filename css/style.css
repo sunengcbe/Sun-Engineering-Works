@@ -346,11 +346,11 @@ ul { list-style: none; }
 }
 
 .helix-path path:nth-child(2){
-    transform: translateX(45px);
+    transform: translateX(20px);
 }
 
 .helix-path path:nth-child(3){
-    transform: translateX(90px);
+    transform: translateX(40px);
 }
 }
 
