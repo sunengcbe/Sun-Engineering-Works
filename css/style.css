@@ -262,9 +262,9 @@ ul { list-style: none; }
             rgba(255,196,0,0.20),
             transparent 55%
         ),
-        url("images/hero-bg.jpg");
+        url("hero-bg.jpg");
 
-    background-size: 1550%;
+    background-size: 150%;
     background-position: center;
     background-repeat: no-repeat;
 
