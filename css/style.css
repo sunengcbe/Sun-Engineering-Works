@@ -254,10 +254,9 @@ ul { list-style: none; }
 
     background:
         linear-gradient(
-            linear-gradient(
-                rgba(0,0,0,0.82),
-                rgba(0,0,0,0.92)
-               ),
+               rgba(0,0,0,0.82),
+               rgba(0,0,0,0.92)
+         ),
         radial-gradient(
             circle at 75% 30%,
             rgba(255,196,0,0.20),
