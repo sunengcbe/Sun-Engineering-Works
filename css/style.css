@@ -244,27 +244,32 @@ ul { list-style: none; }
 .hero-overlay {
     position: absolute;
     inset: 0;
+    overflow: hidden;
+}
+
+.hero-overlay::before {
+    content: "";
+    position: absolute;
+    inset: -20px; /* Prevent white edges after blur */
 
     background:
-        /* Dark overlay */
         linear-gradient(
             rgba(30,30,30,0.65),
             rgba(30,30,30,0.88)
         ),
-
-        /* Yellow glow */
         radial-gradient(
             circle at 75% 30%,
             rgba(255,196,0,0.20),
             transparent 55%
         ),
-
-        /* Background image */
-        url("hero-bg.jpg");
+        url("../images/hero-bg.jpg");
 
     background-size: 140%;
     background-position: center;
     background-repeat: no-repeat;
+
+    filter: blur(4px);      /* Increase to 6px or 8px if needed */
+    transform: scale(1.05); /* Prevent blur edges from showing */
 }
 .hero-content{
     position: relative;
