@@ -260,7 +260,7 @@ ul { list-style: none; }
         ),
 
         /* Background image */
-        url("../images/hero-bg.jpg");
+        url("hero-bg.jpg");
 
     background-size: cover;
     background-position: center;
