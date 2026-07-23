@@ -262,7 +262,7 @@ ul { list-style: none; }
         /* Background image */
         url("hero-bg.jpg");
 
-    background-size: cover;
+    background-size: 140%;
     background-position: center;
     background-repeat: no-repeat;
 }
