@@ -300,10 +300,10 @@ ul { list-style: none; }
   -webkit-text-fill-color: transparent;
 }
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: rgba(255,255,255,0.8);
   margin-bottom: var(--space-4);
-  max-width: 1200px;
+  max-width: 900px;
 }
 
 .hero-actions { display: flex; gap: var(--space-2); flex-wrap: wrap; }
