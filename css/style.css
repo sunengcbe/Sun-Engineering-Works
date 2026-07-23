@@ -268,7 +268,7 @@ ul { list-style: none; }
     background-position: center;
     background-repeat: no-repeat;
 
-    filter: blur(4px);      /* Increase to 6px or 8px if needed */
+    filter: blur(2.5px);      /* Increase to 6px or 8px if needed */
     transform: scale(1.05); /* Prevent blur edges from showing */
 }
 .hero-content{
