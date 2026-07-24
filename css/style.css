@@ -126,6 +126,21 @@ ul { list-style: none; }
 }
 .btn:active { transform: translateY(1px); }
 
+.capability-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.capability-buttons .btn {
+    flex: 1;
+    max-width: 220px;
+    min-width: 180px;
+    text-align: center;
+}
+
 .btn-primary {
   background: var(--yellow-grad);
   color: var(--charcoal);
@@ -146,8 +161,10 @@ ul { list-style: none; }
 }
 .btn-light:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
 
-.btn-sm { padding: 10px 22px; font-size: 0.85rem; }
+.btn-sm { padding: 18px 22px; font-size: 0.85rem; }
 .btn-block { width: 100%; }
+
+
 
 /* =========================================================
    5. HEADER / NAVIGATION
@@ -378,6 +395,11 @@ ul { list-style: none; }
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   margin-bottom: var(--space-2);
 }
+.section-title1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: var(--space-2);
+    color: #FFFFFF;
+}
 .section-intro {
   color: var(--muted);
   max-width: 640px;
@@ -388,14 +410,29 @@ ul { list-style: none; }
 /* =========================================================
    8. SERVICES
    ========================================================= */
+.section-services{
+  padding: 140px;
+    background:
+        linear-gradient( 135deg,
+    #1E1E1E 0%,
+    #2B2B2B 60%,
+    rgba(255,196,0,0.18) 100% ),
+        url("../images/services-bg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Parallax */
+    background-attachment: fixed;
+}
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-3);
 }
 .service-card {
-  background: var(--white);
-  border: 1px solid var(--border);
+  background-color: #FFFFFF;
+  border: 2px solid var(--border);
   border-radius: var(--radius);
   padding: var(--space-4);
   transition: transform var(--t), box-shadow var(--t), border-color var(--t);
@@ -417,14 +454,42 @@ ul { list-style: none; }
   transition: background var(--t), color var(--t);
 }
 .service-card:hover .service-icon { background: var(--yellow-grad); color: var(--charcoal); }
-.service-icon svg { width: 28px; height: 28px; }
+.service-icon svg { width: 32px; height: 32px; }
+.service-icon1 svg { width: 32px; height: 32px; }
 .service-name { font-size: 1.25rem; margin-bottom: var(--space-1); }
 .service-desc { color: var(--muted); }
 
 /* =========================================================
    9. ROLLED THREADS INFO
    ========================================================= */
-.rolled-threads { background: var(--alt-bg); }
+.rolled-threads {
+    padding: 140px;
+
+   background: linear-gradient(
+    270deg,
+    #1E1E1E 0%,
+    #2B2B2B 60%,
+    rgba(255,196,0,0.18) 100%
+    ),
+        url("../images/spiral-bg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Parallax */
+    background-attachment: fixed;
+}
+.rolled-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.rolled-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .rolled-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -434,14 +499,36 @@ ul { list-style: none; }
 .rolled-block { margin-bottom: var(--space-3); }
 .rolled-sub {
   font-size: 1.15rem;
-  color: var(--charcoal);
+  color: var(--yellow-1);
   display: inline;
 }
-.rolled-block p { display: inline; color: var(--dark-gray); }
+.rolled-block p { display: inline; color: var(--border); }
 
 /* =========================================================
    10. CAPABILITIES
    ========================================================= */
+.section-capabilities {
+    padding: 100px;
+
+  background:
+    radial-gradient(
+        circle at top center,
+        rgba(255,196,0,0.08),
+        transparent 30%
+    ),
+    linear-gradient(
+        180deg,
+        #FFFFFF 0%,
+        #F5F5F5 25%,
+        #E3E3E3 55%,
+        #C7C7C7 100%
+    );
+       /* url("../images/spiral-bg.png");*/
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .capabilities-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -617,22 +704,62 @@ ul { list-style: none; }
    15. CTA BANNER
    ========================================================= */
 .cta-banner {
-  background: var(--charcoal);
-  padding: var(--space-6) 0;
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+
+    background:
+        linear-gradient(
+            rgba(114, 114, 114, 0.65),
+            rgba(20,20,20,.65)
+        ),
+        url("../images/askquote.png");
+
+    background-size: 120%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Parallax */
+    background-attachment: fixed;
+
+    
 }
-.cta-banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 20% 50%, rgba(255,196,0,0.15), transparent 50%);
+/* Content Layout */
+.cta-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 300px;
 }
-.cta-content { position: relative; text-align: center; }
-.cta-title {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  color: var(--white);
-  margin-bottom: var(--space-3);
+
+.cta-title{
+    margin: 0;
+    flex: 0;          /* NOT flex:1 */
+}
+.cta-title{
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--white);
+    margin: 0;
+    white-space: nowrap; 
+    flex: 0;          /* or simply remove this line */
+    text-align: left;
+}
+
+.btn-light{
+    flex-shrink: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+    .cta-content{
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .cta-title{
+        text-align: center;
+    }
 }
 
 /* =========================================================
@@ -699,19 +826,126 @@ ul { list-style: none; }
 /* =========================================================
    17. FOOTER
    ========================================================= */
-.footer { background: var(--charcoal); padding: var(--space-5) 0; color: rgba(255,255,255,0.7); }
-.footer-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-3);
+.footer{
+    background:#1f1f1f;
+    color:#bdbdbd;
+    padding:50px 0 30px;
 }
-.footer-brand { display: flex; align-items: center; gap: 10px; }
-.footer-name { font-family: var(--font-head); font-weight: 600; color: var(--white); }
-.footer-nav { display: flex; gap: var(--space-2); flex-wrap: wrap; }
-.footer-nav a:hover { color: var(--yellow-1); }
-.footer-copy { font-size: 0.85rem; }
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.9fr 1.2fr 1fr 1fr;
+    gap:40px;
+    align-items:flex-start;
+}
+
+.footer-brand h3{
+    color:#fff;
+    font-size:2rem;
+    margin:20px 0 10px;
+}
+
+.footer-logo{
+    width:75px;
+    display:block;
+}
+
+.footer-tagline{
+    margin-bottom:25px;
+    font-size:1rem;
+}
+
+.footer-column h4{
+    color:#fff;
+    font-size:1.1rem;
+    margin-bottom:20px;
+    letter-spacing:.5px;
+    line-height:1.5; 
+}
+
+.footer-column p{
+    margin:4px 0;
+    line-height:1.7;
+}
+
+.footer-social{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+.footer-social a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#fff;
+    color:#222;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    transition:.3s;
+    font-size:18px;
+}
+
+.footer-social a:hover{
+    background:#f2c300;
+    color:#111;
+    transform:translateY(-3px);
+}
+
+.footer-divider{
+    width:100%;
+    height:1px;
+    background:rgba(255,255,255,.12);
+    margin:55px 0 25px;
+}
+
+.footer-bottom{
+    text-align:center;
+}
+
+.footer-iso{
+    color:#fff;
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+.footer-bottom p{
+    margin:6px 0;
+}
+
+/* Tablet */
+
+@media (max-width:991px){
+
+.footer-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:40px;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.footer-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.footer-brand{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.footer-social{
+    justify-content:center;
+}
+
+}
 
 /* =========================================================
    18. LOADER
@@ -756,7 +990,7 @@ ul { list-style: none; }
    20. IMAGE PLACEHOLDERS
    ========================================================= */
 .img-placeholder {
-  width: 100%;
+  width: 150%;
   height: 100%;
   min-height: 220px;
   background: repeating-linear-gradient(
@@ -780,7 +1014,7 @@ ul { list-style: none; }
 .img-placeholder code {
   display: inline-block;
   margin-top: 6px;
-  padding: 2px 8px;
+  padding: 8px 8px;
   background: var(--white);
   border-radius: 6px;
   font-size: 0.78rem;
